@@ -1,7 +1,7 @@
 package pep.projet_proc;
 
-import pep.projet_proc.instructions.Instruction;
-import pep.projet_proc.instructions.AND;
+import pep.projet_proc.instructions.dataprocessing.Instruction;
+import pep.projet_proc.instructions.dataprocessing.AND;
 
 import java.util.HashMap;
 import java.util.Map;

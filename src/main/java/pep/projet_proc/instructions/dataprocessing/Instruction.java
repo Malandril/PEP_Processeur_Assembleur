@@ -1,4 +1,4 @@
-package pep.projet_proc.instructions;
+package pep.projet_proc.instructions.dataprocessing;
 
 /**
  * Created by user on 08/12/2016.
