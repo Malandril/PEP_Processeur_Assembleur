@@ -1,5 +1,7 @@
 package pep.projet_proc.instructions.dataprocessing;
 
+import pep.projet_proc.instructions.Instruction;
+
 /**
  * Created by user on 08/12/2016.
  */
