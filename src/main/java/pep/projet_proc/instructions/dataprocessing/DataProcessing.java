@@ -12,7 +12,7 @@ public abstract class DataProcessing extends Instruction {
 
     @Override
     public String getFinalCode(String... args) {
-        String s = opType +opCode+args[0]+args[1];
+        String s = opType+opCode+args[1]+args[0];
         return String.format("%04X",Integer.valueOf(s,2));
     }
 }

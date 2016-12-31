@@ -6,6 +6,8 @@ import pep.projet_proc.instructions.Instruction;
  * Created by user on 15/12/2016.
  */
 public abstract class Operation extends Instruction {
+    int immediateSize;
+
     public Operation() {
         opType = "000";
     }
