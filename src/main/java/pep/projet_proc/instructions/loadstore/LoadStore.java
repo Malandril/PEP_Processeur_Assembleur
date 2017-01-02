@@ -4,7 +4,10 @@ import pep.projet_proc.Parser;
 import pep.projet_proc.instructions.Instruction;
 
 /**
- * Created by user on 29/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Classe mère des instructions de load et store
  */
 public class LoadStore extends Instruction {
     int immediateSize = 5;
@@ -13,23 +16,22 @@ public class LoadStore extends Instruction {
         opType = "011";
     }
 
+    /**
+     * Méthode retournant la valeur hexadecimale de l'instruction
+     * @param args arguments de l'instruction
+     * @return valeur hexadecimale de l'instruction
+     * @see Instruction#getFinalCode(String...)
+     */
     @Override
     public String getFinalCode(String[] args) {
         String s = opType + opCode;
-        String immediate = "";
-        String Rn = "";
-        String Rt = "";
+        String immediate;
         if(args.length == 3){
             immediate = Parser.completeZero(args[2],immediateSize);
-            Rn = args[1];
-            Rt = args[0];
         }else{
             immediate = "00000";
-            Rn = args[1];
-            Rt = args[0];
         }
-        s += " "+immediate+" "+Rn+" "+Rt;
-        return "";
-//        return String.format("%04X", Integer.valueOf(s, 2));
+        s += immediate+args[1]+args[0];
+        return String.format("%04X", Integer.valueOf(s, 2));
     }
 }

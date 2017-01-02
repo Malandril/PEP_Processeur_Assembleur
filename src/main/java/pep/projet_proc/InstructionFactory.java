@@ -11,7 +11,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by user on 15/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Rassemble toutes les instructions ARM et fait le lien entre l'instruction sous forme textuelle
+ * et l'objet Java qui lui correspond
  */
 public class InstructionFactory {
     public static Map<String, Instruction> instructionMap = new HashMap<>();
@@ -33,28 +37,31 @@ public class InstructionFactory {
         instructionMap.put(RSB.class.getSimpleName(), new RSB());
         instructionMap.put(SBC.class.getSimpleName(), new SBC());
         instructionMap.put(TST.class.getSimpleName(), new TST());
-
         instructionMap.put(ADD.class.getSimpleName(), new ADD());
         instructionMap.put(ASRimm.class.getSimpleName(), new ASRimm());
         instructionMap.put(LSLimm.class.getSimpleName(), new LSLimm());
         instructionMap.put(LSRimm.class.getSimpleName(), new LSRimm());
         instructionMap.put(MOV.class.getSimpleName(), new MOV());
         instructionMap.put(SUB.class.getSimpleName(), new SUB());
-
         instructionMap.put(LDR.class.getSimpleName(), new LDR());
         instructionMap.put(STR.class.getSimpleName(), new STR());
-
         instructionMap.put(B.class.getSimpleName(), new B());
     }
 
 
-    public static String getTranslation(String str, String... args) {
-        if (str.compareTo("ASR") == 0 || str.compareTo("LSL") == 0 || str.compareTo("LSR") == 0){
+    /**
+     * Renvoie la traduction en hexadécimale de l'instruction passée en paramètre
+     * @param instructionName intitulé de l'instruction
+     * @param args paramètres de l'instruction
+     * @return valeur hexadécimale de l'instruction
+     */
+    public static String getTranslation(String instructionName, String... args) {
+        if (instructionName.compareTo("ASR") == 0 || instructionName.compareTo("LSL") == 0 || instructionName.compareTo("LSR") == 0){
             if(args.length == 3){
-                str = str+"imm";
+                instructionName = instructionName+"imm";
             }
         }
-        return instructionMap.get(str).getFinalCode(args);
+        return instructionMap.get(instructionName).getFinalCode(args);
     }
 
 }

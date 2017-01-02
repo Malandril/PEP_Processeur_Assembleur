@@ -1,7 +1,9 @@
 package pep.projet_proc.condition;
 
 /**
- * Created by user on 29/12/2016.
+ * @author Loic Gardaire
+ *
+ * Enumeration des différentes conditions nécessaires pour les branches et de leur valeur binaire
  */
 public enum Condition {
     EQ("0000"),

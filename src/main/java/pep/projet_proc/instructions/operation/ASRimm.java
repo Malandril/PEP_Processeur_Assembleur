@@ -3,7 +3,9 @@ package pep.projet_proc.instructions.operation;
 import pep.projet_proc.Parser;
 
 /**
- * Created by user on 31/12/2016.
+ * @author Loic Gardaire
+ *
+ * Instruction ASR avec un immediate
  */
 public class ASRimm extends Operation {
     public ASRimm() {
@@ -12,6 +14,12 @@ public class ASRimm extends Operation {
         immediateSize = 5;
     }
 
+    /**
+     * Méthode retournant la valeur hexadecimale de l'instruction
+     * @param args arguments de l'instruction
+     * @return valeur hexadecimale de l'instruction
+     * @see Operation#getFinalCode(String...)
+     */
     @Override
     public String getFinalCode(String... args) {
         String s = opType+opCode+ Parser.completeZero(args[2],immediateSize)+args[1]+args[0];

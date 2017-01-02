@@ -1,7 +1,10 @@
 package pep.projet_proc.instructions.dataprocessing;
 
 /**
- * Created by user on 15/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Instruction MUL
  */
 public class MUL extends DataProcessing {
     public MUL() {

@@ -1,7 +1,10 @@
 package pep.projet_proc.instructions.loadstore;
 
 /**
- * Created by user on 29/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Instruction LDR
  */
 public class LDR extends LoadStore {
     public LDR() {

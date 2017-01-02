@@ -1,15 +1,14 @@
 package pep.projet_proc.instructions;
 
 /**
- * Created by user on 08/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Classe mère des instructions ARM
  */
 public abstract class Instruction {
     public String opType ="";
     public String opCode ="";
-
-    String interpret(){
-        return String.format("%02X", opType);
-    }
 
     public String getOpType(){
         return opType;
@@ -19,6 +18,11 @@ public abstract class Instruction {
         return opCode;
     }
 
+    /**
+     * Méthode retournant la valeur hexadecimale de l'instruction
+     * @param args arguments de l'instruction
+     * @return valeur hexadecimale de l'instruction
+     */
     public abstract String getFinalCode(String... args);
 
 }

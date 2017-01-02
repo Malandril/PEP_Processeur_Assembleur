@@ -1,7 +1,10 @@
 package pep.projet_proc.instructions.dataprocessing;
 
 /**
- * Created by user on 31/12/2016.
+ * @author Loic Gardaire
+ * @author Thomas Canava
+ *
+ * Instruction LSL
  */
 public class LSR extends DataProcessing {
     public LSR() {

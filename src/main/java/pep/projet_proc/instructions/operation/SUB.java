@@ -1,7 +1,9 @@
 package pep.projet_proc.instructions.operation;
 
 /**
- * Created by user on 21/12/2016.
+ * @author Loic Gardaire
+ *
+ * Instruction SUB
  */
 public class SUB extends Operation {
     public SUB() {
@@ -9,6 +11,12 @@ public class SUB extends Operation {
         opCode="1101";
     }
 
+    /**
+     * Méthode retournant la valeur hexadecimale de l'instruction
+     * @param args arguments de l'instruction
+     * @return valeur hexadecimale de l'instruction
+     * @see Operation#getFinalCode(String...)
+     */
     @Override
     public String getFinalCode(String... args) {
         String s = opType+opCode+args[2]+args[1]+args[0];

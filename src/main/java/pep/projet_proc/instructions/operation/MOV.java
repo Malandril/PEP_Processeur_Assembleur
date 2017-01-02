@@ -3,7 +3,9 @@ package pep.projet_proc.instructions.operation;
 import pep.projet_proc.Parser;
 
 /**
- * Created by user on 21/12/2016.
+ * @author Loic Gardaire
+ *
+ * Instruction MOV
  */
 public class MOV extends Operation {
     public MOV() {
@@ -12,6 +14,12 @@ public class MOV extends Operation {
         immediateSize = 8;
     }
 
+    /**
+     * Méthode retournant la valeur hexadecimale de l'instruction
+     * @param args arguments de l'instruction
+     * @return valeur hexadecimale de l'instruction
+     * @see Operation#getFinalCode(String...)
+     */
     @Override
     public String getFinalCode(String... args) {
         String s = opType+opCode+args[0]+ Parser.completeZero(args[1],immediateSize);
