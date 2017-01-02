@@ -68,7 +68,7 @@ public class Parser {
         BufferedWriter rom = new BufferedWriter(new FileWriter("rom.txt"));
         rom.write("v2.0 raw");
         for (int i = 0; i < finalList.size(); i++) {
-            rom.write(finalList.get(i) + " ");
+            rom.write("\n"+finalList.get(i) + " ");
         }
         rom.close();
     }
