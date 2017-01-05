@@ -9,6 +9,6 @@ package pep.projet_proc.instructions.loadstore;
 public class STR extends LoadStore {
     public STR() {
         super();
-        opCode="00";
+        opCode="0";
     }
 }

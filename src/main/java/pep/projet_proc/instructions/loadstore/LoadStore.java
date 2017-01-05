@@ -10,10 +10,10 @@ import pep.projet_proc.instructions.Instruction;
  * Classe mère des instructions de load et store
  */
 public class LoadStore extends Instruction {
-    int immediateSize = 5;
+    int immediateSize = 8;
 
     public LoadStore() {
-        opType = "011";
+        opType = "1001";
     }
 
     /**
@@ -25,13 +25,8 @@ public class LoadStore extends Instruction {
     @Override
     public String getFinalCode(String[] args) {
         String s = opType + opCode;
-        String immediate;
-        if(args.length == 3){
-            immediate = Parser.completeZero(args[2],immediateSize);
-        }else{
-            immediate = "00000";
-        }
-        s += immediate+args[1]+args[0];
+        String immediate = Parser.completeZero(args[1],immediateSize);
+        s += args[0]+immediate;
         return String.format("%04X", Integer.valueOf(s, 2));
     }
 }

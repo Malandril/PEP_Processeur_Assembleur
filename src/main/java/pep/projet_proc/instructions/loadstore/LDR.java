@@ -9,6 +9,6 @@ package pep.projet_proc.instructions.loadstore;
 public class LDR extends LoadStore {
     public LDR() {
         super();
-        opCode="01";
+        opCode="1";
     }
 }

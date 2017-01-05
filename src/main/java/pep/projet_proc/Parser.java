@@ -60,7 +60,7 @@ public class Parser {
                 tmp = tmp.replaceAll("\\[", "").replaceAll("\\]", "");
                 tmp = replaceRegisterByValue(tmp);
                 tmp = replaceImmediateByValue(tmp);
-                if (isBranch(tmp)) {
+                if (isBranchWithCondition(tmp)) {
                     Pattern p = Pattern.compile("([A-Z])([a-z]+)");
                     Matcher m = p.matcher(tmp);
                     if (m.matches()) {
@@ -108,7 +108,7 @@ public class Parser {
      * @param str string à étudier
      * @return true si la string est une branche, false sinon
      */
-    public boolean isBranch(String str) {
+    public boolean isBranchWithCondition(String str) {
         Pattern p = Pattern.compile("B[a-z]+");
         Matcher m = p.matcher(str);
         return m.matches();
